@@ -1,0 +1,49 @@
+#include <iostream>
+class Cat{
+private:
+    int age;
+    double weight;
+    std::string name;
+public:
+    void setName(std::string n);
+    std::string getName();
+    void setWeight(double w);
+    double getWeight();
+    int getAge();
+    void setAge(int a);
+    void cry();
+};
+    
+    void Cat::setName(std::string n) {
+        name=n;
+    }
+   std::string Cat::getName() {
+        return name;
+    }
+    void Cat::setWeight(double w) {
+        weight = w;
+    }
+    double Cat::getWeight() {
+        return weight;
+    }
+    void Cat::setAge(int a) {
+        age = a;
+        
+    }
+    int Cat::getAge(){
+        return age;  //리턴 값이 int형이므로 getAge() 앞에 int를 붙어야 됨
+    }
+    void Cat::cry() {
+        std::cout << "야옹~!\n";
+    }
+
+int main()
+{
+    Cat nabi;
+    nabi.setAge(2);   //cannot use dot operator on a type
+    nabi.setWeight(8.9);
+    nabi.setName("힝구");
+    std::cout << "이름은 " <<nabi.getName() << ", 힝구의 나이는 " << nabi.getAge() << ", 힝구의 몸무게는 "<< nabi.getWeight() << "입니다.\n" ;
+     nabi.cry();
+    
+}
